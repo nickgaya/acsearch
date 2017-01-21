@@ -99,7 +99,7 @@ class TestACNode:
         assert_is(self.root.get_next('b'), self.node_b)
         assert_is(self.root.get_next('c'), self.node_c)
         assert_is(self.root.get_next('x'), self.root)
-        
+
         assert_is(self.node_a.get_next('a'), self.node_a)
         assert_is(self.node_a.get_next('b'), self.node_ab)
         assert_is(self.node_a.get_next('c'), self.node_c)
@@ -197,7 +197,7 @@ class TestACDictionary:
 
     def test_finditer(self):
         assert_equal([(m.start, m.end, str(m))
-                       for m in list(self.acd.finditer('abccabx'))],
+                      for m in list(self.acd.finditer('abccabx'))],
                      [(0, 1, 'a'),
                       (0, 2, 'ab'),
                       (2, 3, 'c'),

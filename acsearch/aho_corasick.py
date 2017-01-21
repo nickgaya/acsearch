@@ -51,8 +51,8 @@ class ACDictionary:
 
     def findall(self, text):
         """
-        Return a list of dictionary words contained in the given text. Each word
-        will appear once per occurrence in the text.
+        Return a list of dictionary words contained in the given text. Each
+        word will appear once per occurrence in the text.
         """
         return [str(wnode) for end, wnode in self._find(text)]
 
@@ -77,8 +77,8 @@ class ACDictionary:
         while nodes:
             node = nodes.popleft() if bf else nodes.pop()
             yield node
-            nodes.extend((v for k,v in sorted(node.children.items(),
-                                              reverse=not bf))
+            nodes.extend((v for k, v in sorted(node.children.items(),
+                                               reverse=not bf))
                          if sort else node.children.values())
 
     def __iter__(self):
@@ -127,7 +127,7 @@ class ACNode:
             child.is_word = child.is_word or is_word
         else:
             # Create new child
-            child =  ACNode(char, self, is_word)
+            child = ACNode(char, self, is_word)
             self.children[char] = child
 
         return child
@@ -188,7 +188,7 @@ class ACNode:
 
     def __len__(self):
         return self.len
-        
+
 
 class ACRootNode(ACNode):
     """ Aho-Corasick root node """

@@ -1,1 +1,1 @@
-from aho_corasick import ACDictionary
+from acsearch.aho_corasick import ACDictionary  # noqa
